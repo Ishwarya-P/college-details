@@ -1,0 +1,141 @@
+{>"layout"/}
+
+{<body}
+
+<button class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModal">
+Add College Details
+</button>
+
+<br/>
+
+
+
+{#colgdata}
+
+<div class="card card-body bg-light card-padding">
+<h4>{name}<button class="btn btn-default float-right dropdown-toggle"  data-toggle="collapse" href="#colgdata_{id}" 
+aria-expanded="false" aria-controls="#colgdata_{id}">
+</button></h4>
+
+<div class="collapse" id="colgdata_{id}">
+<br>
+
+<p><strong>Location: </strong>{location}</p>
+<p><strong>Details: </strong>{details}</p>
+
+<hr />
+
+<button class="btn btn-success edit-colg"  data-toggle="modal" data-target="#EditformModal" data-id='{id}' data-name='{name}' data-location='{location}' data-details='{details}' >
+ <span class="glyphicon">&#x270f;</span>
+</button>
+
+<button class="btn btn-danger delete-colg" data-id='{id}'>
+<span >&times;</span>
+</button>
+
+
+ 
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+{/colgdata}
+
+
+
+
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+<form method="post" action="/add">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add College</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" data-name={name}/>
+        </div>
+
+        <div class="form-group">
+        <label>Location</label>
+        <input type="text" name="location" class="form-control" data-location={location}/>
+        </div>
+
+        <div class="form-group">
+        <label>Details</label>
+        <input type="text" name="details" class="form-control" data-details={details}/>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit"  value="save" class="btn btn-primary"/>
+      </div>
+</form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="EditformModal" tabindex="-1" role="dialog" aria-labelledby="EditformModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+<form method="post" action="/edit">
+
+<input type="hidden" name="id" id="form-id" class="form-control"/>
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update the College</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" id="form-name"/>
+        </div>
+
+        <div class="form-group">
+        <label>Location</label>
+        <input type="text" name="location" class="form-control" id="form-location"/>
+        </div>
+
+        <div class="form-group">
+        <label>Details</label>
+        <input type="text" name="details" class="form-control" id="form-details"/>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit"  value="save" class="btn btn-primary"/>
+      </div>
+</form>
+
+    </div>
+  </div>
+</div>
+
+
+
+{/body}

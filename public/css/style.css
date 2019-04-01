@@ -1,0 +1,22 @@
+body{
+    margin-top: 10px;
+    background:#f9f9f9;
+}
+
+.card-padding{
+
+    margin-top:10px;
+}
+
+.edit-colg,.delete-colg{
+
+    margin:10px 10px;
+}
+
+.btn-block{
+    background:#000080;
+    border:2px solid 	#000080;
+    font-size:20px;
+   width:50%;
+   margin:0 auto;
+}
